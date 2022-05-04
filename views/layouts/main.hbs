@@ -1,0 +1,31 @@
+{{!--
+    This is the default layout applied to any page sent from the server via res.render()
+
+    For more information see http://handlebarsjs.com/
+--}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <title>Hello World MAV</title>
+
+</head>
+{{!-- <div id='ZN_0AIErOWsRpiF0Wi'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div> --}}
+<body data-bind="css: { 'has-subnav': pageHasSubNav }" class="fixed-footer">
+
+    <div class="fixed-footer-wrapper">
+        {{! The content of the page is inserted here }}
+        {{{body}}}
+    </div>
+    
+    <script src="{{scriptsPath}}/js/app.js"></script>
+    <script src="{{scriptsPath}}/js/chunk-vendors.js"></script>
+    
+    
+</body>
+
+</html>
