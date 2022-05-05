@@ -2,7 +2,7 @@
   "name": "helloworld",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run serve:server\" \"npm run serve:client\"",
+    "start": "concurrently \"npm run serve:server\" \"npm run serve:client\"",
     "serve:server": "cross-env ENABLE_WEBPACK_DEV_SERVER=true nodemon server",
     "serve:client": "cross-env ENABLE_WEBPACK_DEV_SERVER=true vue-cli-service serve",
     "build": "vue-cli-service build",
