@@ -32,7 +32,7 @@ app.use(express.json());
 
 
 
-const port = 3000;
+const port = 8080;//3000;
 const config = {baseURL : `http://localhost:${port}`};
 
 app.get('/', function (req, res, next) {
