@@ -28,6 +28,7 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.json());
 
 
@@ -37,9 +38,11 @@ const config = {baseURL : `http://localhost:${port}`};
 
 app.get('/', function (req, res, next) {
   const isDev = process.env.NODE_ENV || 'dev';
-  const scriptsPath = isDev ? `http://localhost:3001` : '/dist';
+  const scriptsPath = isDev ? `http://localhost:8080` : '/dist';
   res.render('index', {scriptsPath});
 });
+
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -47,6 +50,8 @@ app.use(function (req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
 
 http.createServer(app)
   .listen(port, () => {
